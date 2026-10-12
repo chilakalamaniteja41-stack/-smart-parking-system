@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Parking System</h1>
+        <p>Manage your parking slots and vehicle numbers</p>
+    </header>
+
+    <main class="container">
+        <section class="summary">
+            <div class="summary-card">
+                <h3>Total Slots</h3>
+                <p id="totalSlots">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Available</h3>
+                <p id="availableSlots">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Occupied</h3>
+                <p id="occupiedSlots">0</p>
+            </div>
+        </section>
+
+        <section class="parking-section">
+            <div class="section-heading">
+                <h2>Parking Slots</h2>
+                <button id="resetBtn" type="button">Reset Slots</button>
+            </div>
+
+            <div class="legend">
+                <span><span class="legend-dot available-dot"></span> Available</span>
+                <span><span class="legend-dot occupied-dot"></span> Occupied</span>
+            </div>
+
+            <div id="parkingSlots" class="parking-grid">
+                Loading parking slots...
+            </div>
+        </section>
+
+        <p id="message" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer>
+        <p>Smart Parking System &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

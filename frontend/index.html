@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🚗 SmartPark</h1>
+        <p>Smart Parking Management System</p>
+    </header>
+
+    <main class="container">
+        <h2>Parking Dashboard</h2>
+        <p id="current-date"></p>
+
+        <section class="summary-cards">
+            <div class="card">
+                <p>Total Slots</p>
+                <h2 id="total-count">10</h2>
+            </div>
+            <div class="card">
+                <p>Available Slots</p>
+                <h2 id="available-count">5</h2>
+            </div>
+            <div class="card">
+                <p>Occupied Slots</p>
+                <h2 id="occupied-count">5</h2>
+            </div>
+        </section>
+
+        <section class="parking-section">
+            <h2>Parking Area</h2>
+
+            <div class="parking-controls">
+                <input id="search-slot" type="text"
+                    placeholder="Search slot (e.g. P03)">
+
+                <select id="filter-status">
+                    <option value="all">All Slots</option>
+                    <option value="available">Available Only</option>
+                    <option value="occupied">Occupied Only</option>
+                </select>
+
+                <button id="reset-button" type="button">
+                    Reset Demo
+                </button>
+            </div>
+
+            <div class="parking-grid">
+                <button class="slot available" data-slot="P01" type="button"><strong>P01</strong><span class="slot-status">Available</span></button>
+                <button class="slot occupied" data-slot="P02" type="button"><strong>P02</strong><span class="slot-status">Occupied</span></button>
+                <button class="slot available" data-slot="P03" type="button"><strong>P03</strong><span class="slot-status">Available</span></button>
+                <button class="slot occupied" data-slot="P04" type="button"><strong>P04</strong><span class="slot-status">Occupied</span></button>
+                <button class="slot available" data-slot="P05" type="button"><strong>P05</strong><span class="slot-status">Available</span></button>
+                <button class="slot occupied" data-slot="P06" type="button"><strong>P06</strong><span class="slot-status">Occupied</span></button>
+                <button class="slot available" data-slot="P07" type="button"><strong>P07</strong><span class="slot-status">Available</span></button>
+                <button class="slot occupied" data-slot="P08" type="button"><strong>P08</strong><span class="slot-status">Occupied</span></button>
+                <button class="slot available" data-slot="P09" type="button"><strong>P09</strong><span class="slot-status">Available</span></button>
+                <button class="slot occupied" data-slot="P10" type="button"><strong>P10</strong><span class="slot-status">Occupied</span></button>
+            </div>
+
+            <p id="no-results" hidden>No matching slots found.</p>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

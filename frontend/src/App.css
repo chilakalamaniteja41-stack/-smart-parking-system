@@ -1,0 +1,413 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.parking-app {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.page-header {
+  text-align: center;
+  padding: 30px 15px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 5px 22px rgba(31, 45, 61, 0.06);
+}
+
+.eyebrow {
+  color: #16835d;
+  font-weight: 800;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.page-header h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.page-header p {
+  color: #64748b;
+  margin-bottom: 22px;
+}
+
+.refresh-button,
+.reset-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 16px;
+  margin: 5px;
+  font-weight: 700;
+}
+
+.refresh-button {
+  color: #ffffff;
+  background: #1769aa;
+}
+
+.reset-button {
+  color: #ffffff;
+  background: #d94848;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.summary-card {
+  padding: 22px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(31, 45, 61, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-card span {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.summary-card strong {
+  font-size: 32px;
+}
+
+.total-card {
+  border-top: 4px solid #1769aa;
+}
+
+.available-card {
+  border-top: 4px solid #159765;
+}
+
+.occupied-card {
+  border-top: 4px solid #d94848;
+}
+
+.parking-section {
+  background: white;
+  padding: 26px;
+  margin-top: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 22px rgba(31, 45, 61, 0.05);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #64748b;
+}
+
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #475569;
+  font-size: 13px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.green-dot {
+  background: #159765;
+}
+
+.red-dot {
+  background: #d94848;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.slot-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.slot-card.is-available {
+  border-top: 4px solid #159765;
+}
+
+.slot-card.is-occupied {
+  border-top: 4px solid #d94848;
+}
+
+.slot-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parking-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #e8f1ff;
+  color: #1769aa;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.status-pill {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pill-green {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill-red {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.slot-card h3 {
+  margin: 17px 0 5px;
+  font-size: 23px;
+}
+
+.slot-label {
+  margin: 0 0 16px;
+  color: #94a3b8;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 14px 0;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.vehicle-info span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.slot-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slot-actions input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline-color: #1769aa;
+}
+
+.occupy-button,
+.release-button {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px;
+  font-weight: 700;
+}
+
+.occupy-button {
+  background: #1769aa;
+  color: white;
+}
+
+.release-button {
+  margin-top: 14px;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.notice {
+  padding: 14px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+}
+
+.error {
+  padding: 14px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.history-section {
+  margin-top: 28px;
+}
+
+.history-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.history-table th,
+.history-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.history-table th {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 13px;
+}
+
+.history-table td {
+  color: #475569;
+  font-size: 14px;
+}
+
+.history-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.history-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.history-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.history-complete {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+footer {
+  text-align: center;
+  color: #64748b;
+  padding: 28px 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .slot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .parking-app {
+    width: 94%;
+    padding-top: 16px;
+  }
+
+  .summary {
+    gap: 9px;
+  }
+
+  .summary-card {
+    padding: 14px 10px;
+  }
+
+  .summary-card span {
+    font-size: 12px;
+  }
+
+  .summary-card strong {
+    font-size: 25px;
+  }
+
+  .slot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-section {
+    padding: 17px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-header h1 {
+    font-size: 29px;
+  }
+}
